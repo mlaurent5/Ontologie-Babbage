@@ -10,8 +10,9 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo">
         <dc:description xml:lang="en">An ontology about the correpondence of Charles Babbage.</dc:description>
+        <rdfs:comment xml:lang="fr">Une ontologie sur la correspondance de Charles Babbage.</rdfs:comment>
         <rdfs:label xml:lang="en">cbo</rdfs:label>
-        <rdfs:label xml:lang="fr">cbo</rdfs:label>
+        <rdfs:label xml:lang="fr">ocb</rdfs:label>
     </owl:Ontology>
     
 
@@ -58,7 +59,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="en">The person(s) to which someone descends from.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Les personnes indentifiées dont un individu est le descendant.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The identified persons from which someone descends.</rdfs:comment>
         <rdfs:label xml:lang="en">childOf</rdfs:label>
         <rdfs:label xml:lang="fr">enfantDe</rdfs:label>
     </owl:ObjectProperty>
@@ -87,6 +89,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#ArchivePlace"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle une lettre est archivée aujourd&apos;hui.</rdfs:comment>
         <rdfs:comment xml:lang="en">The adress at which a letter is archived today.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourAdresseDArchivage</rdfs:label>
         <rdfs:label xml:lang="en">hasArchivedAddress</rdfs:label>
@@ -116,6 +119,8 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasCorrespondent">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:comment xml:lang="en">A person that was either the writer or the receiver of the letter.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne concernée par la lettre, qui l&apos;a reçue ou écrite.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourCorrespondant</rdfs:label>
         <rdfs:label xml:lang="en">hasCorrespondent</rdfs:label>
     </owl:ObjectProperty>
@@ -131,6 +136,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle la lettre a été envoyée.</rdfs:comment>
         <rdfs:comment xml:lang="en">The adress to which the letter was sent.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourAdresseDeDestination</rdfs:label>
         <rdfs:label xml:lang="en">hasDestinationAddress</rdfs:label>
@@ -166,6 +172,7 @@
         <rdfs:comment xml:lang="fr">La lettre qui est la réponse de celle-ci.</rdfs:comment>
         <rdfs:comment xml:lang="en">The letter which replied to this one.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourRéponse</rdfs:label>
+        <rdfs:label xml:lang="en">hasReply</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -192,8 +199,8 @@
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSubjectOf"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
+        <rdfs:comment xml:lang="en">A letter can have a single subject, multiple ones, or none in particular.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Une lettre peut avoir un sujet, plusieurs, ou aucun en particulier.</rdfs:comment>
-        <rdfs:label xml:lang="en">A letter can have a single subject, multiple ones, or none in particular.</rdfs:label>
         <rdfs:label xml:lang="fr">aPourSujet</rdfs:label>
         <rdfs:label xml:lang="en">hasSubject</rdfs:label>
     </owl:ObjectProperty>
@@ -220,6 +227,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:comment xml:lang="en">A person that was born at this place.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne qui est née en ce lieu.</rdfs:comment>
         <rdfs:label xml:lang="fr">estLeLieuDeNaissanceDe</rdfs:label>
         <rdfs:label xml:lang="en">isBirthPlaceOf</rdfs:label>
     </owl:ObjectProperty>
@@ -232,6 +241,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
+        <rdfs:comment xml:lang="en">A letter that was sent to the given address.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">La lettre dont une adresse est la destination.</rdfs:comment>
         <rdfs:label xml:lang="fr">estLAdresseDeDestinationDe</rdfs:label>
         <rdfs:label xml:lang="en">isDestinationAdressOf</rdfs:label>
     </owl:ObjectProperty>
@@ -245,6 +256,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
+        <rdfs:comment xml:lang="fr">L&apos;institution à laquelle cette personne appartient.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The organization to which this person belongs.</rdfs:comment>
         <rdfs:label xml:lang="fr">estMembreDe</rdfs:label>
         <rdfs:label xml:lang="en">isMemberOf</rdfs:label>
     </owl:ObjectProperty>
@@ -257,6 +270,8 @@
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSentTo"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
+        <rdfs:comment xml:lang="en">A letter received by the person.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre reçue par la personne.</rdfs:comment>
         <rdfs:label xml:lang="fr">estLeReceveurDe</rdfs:label>
         <rdfs:label xml:lang="en">isReceiverOf</rdfs:label>
     </owl:ObjectProperty>
@@ -268,6 +283,8 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isResponseOf">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
+        <rdfs:comment xml:lang="fr">La lettre dont celle-ci est la réponse.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The letter to which this one responded.</rdfs:comment>
         <rdfs:label xml:lang="fr">estRéponseDe</rdfs:label>
         <rdfs:label xml:lang="en">isResponseOf</rdfs:label>
     </owl:ObjectProperty>
@@ -279,6 +296,8 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isScientificDomainOf">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:comment xml:lang="en">A person that is proficient in the given scientific field.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne qui est compétente dans le domaine scientifique.</rdfs:comment>
         <rdfs:label xml:lang="fr">estLeDomaineScientifiqueDe</rdfs:label>
         <rdfs:label xml:lang="en">isScientificDomainOf</rdfs:label>
     </owl:ObjectProperty>
@@ -291,6 +310,8 @@
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSentBy"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
+        <rdfs:comment xml:lang="en">A letter sent by the person.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre écrite par la personne.</rdfs:comment>
         <rdfs:label xml:lang="fr">estLEnvoyeurDe</rdfs:label>
         <rdfs:label xml:lang="en">isSenderOf</rdfs:label>
     </owl:ObjectProperty>
@@ -306,6 +327,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:comment xml:lang="fr">La personne qui a écrit la lettre.</rdfs:comment>
         <rdfs:comment xml:lang="en">The person who wrote the letter.</rdfs:comment>
         <rdfs:label xml:lang="fr">estEnvoyéePar</rdfs:label>
         <rdfs:label xml:lang="en">isSentBy</rdfs:label>
@@ -322,6 +344,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:comment xml:lang="fr">La personne à qui la lettre est adressée.</rdfs:comment>
         <rdfs:comment xml:lang="en">The person to whom the latter is addressed.</rdfs:comment>
         <rdfs:label xml:lang="fr">estEnvoyéeA</rdfs:label>
         <rdfs:label xml:lang="en">isSentTo</rdfs:label>
@@ -334,7 +357,8 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSubjectOf">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:comment xml:lang="en">The subject of one or more letters.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A letter that concerns the subject.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre qui traite du sujet.</rdfs:comment>
         <rdfs:label xml:lang="fr">estSujetDe</rdfs:label>
         <rdfs:label xml:lang="en">isSubjectOf</rdfs:label>
     </owl:ObjectProperty>
@@ -344,10 +368,12 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#livesAt -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#livesAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle une personne vit.</rdfs:comment>
         <rdfs:comment xml:lang="en">The address at which a person lives.</rdfs:comment>
         <rdfs:label xml:lang="en">livesAt</rdfs:label>
         <rdfs:label xml:lang="fr">vitA</rdfs:label>
@@ -362,6 +388,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:comment xml:lang="en">A person that is identified as being a child of this one.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne identifiée comme étant l&apos;enfant de celle-ci.</rdfs:comment>
         <rdfs:label xml:lang="fr">parentDe</rdfs:label>
         <rdfs:label xml:lang="en">parentOf</rdfs:label>
     </owl:ObjectProperty>
@@ -377,6 +405,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
         <rdfs:comment xml:lang="en">A document which the letter references.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un document que la lettre cite.</rdfs:comment>
         <rdfs:label xml:lang="fr">citeDocument</rdfs:label>
         <rdfs:label xml:lang="en">referencesDocument</rdfs:label>
     </owl:ObjectProperty>
@@ -392,6 +421,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:comment xml:lang="en">A person which the letter references.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne que la lettre cite.</rdfs:comment>
         <rdfs:label xml:lang="fr">citePersonne</rdfs:label>
         <rdfs:label xml:lang="en">referencesPerson</rdfs:label>
     </owl:ObjectProperty>
@@ -407,6 +437,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
         <rdfs:comment xml:lang="en">A place that is referenced by the letter.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un lieu que la lettre cite.</rdfs:comment>
         <rdfs:label xml:lang="fr">citeLieu</rdfs:label>
         <rdfs:label xml:lang="en">referencesPlace</rdfs:label>
     </owl:ObjectProperty>
@@ -421,9 +452,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse depuis laquelle la lettre a été envoyée.</rdfs:comment>
         <rdfs:comment xml:lang="en">The adress from which the letter was sent.</rdfs:comment>
-        <rdfs:comment xml:lang="en">sentAddress</rdfs:comment>
         <rdfs:label xml:lang="fr">adresseDEnvoi</rdfs:label>
+        <rdfs:label xml:lang="en">sentAddress</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -436,6 +468,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:comment xml:lang="fr">Quelqu&apos;un qui est identifié comme ayant les mêmes parents que la personne considérée.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Somebody that is identified as being related to the given person by way of similar parents.</rdfs:comment>
+        <rdfs:label xml:lang="fr">frèreOuSoeurDe</rdfs:label>
         <rdfs:label xml:lang="en">siblingOf</rdfs:label>
     </owl:ObjectProperty>
     
@@ -448,6 +483,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:comment xml:lang="en">A person that is working at this place.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne qui travaille en ce lieu.</rdfs:comment>
         <rdfs:label xml:lang="fr">lieuDeTravail</rdfs:label>
         <rdfs:label xml:lang="en">workplace</rdfs:label>
     </owl:ObjectProperty>
@@ -459,6 +496,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#locatedAt">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:comment xml:lang="fr">L&apos;endroit auquel une organisation est située.</rdfs:comment>
         <rdfs:comment xml:lang="en">The place at which an organization may be found.</rdfs:comment>
         <rdfs:label xml:lang="en">locatedAt</rdfs:label>
         <rdfs:label xml:lang="fr">situéeA</rdfs:label>
@@ -469,6 +507,8 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references">
+        <rdfs:comment xml:lang="en">A ressource that is quoted or named by the letter.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une ressource citée ou nommé dans la lettre.</rdfs:comment>
         <rdfs:label xml:lang="fr">cite</rdfs:label>
         <rdfs:label xml:lang="en">references</rdfs:label>
     </owl:ObjectProperty>
@@ -505,6 +545,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#citizenship">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le pays dans lequel une personne est identifiée comme citoyen.</rdfs:comment>
         <rdfs:comment xml:lang="en">The country in which a person is identified as a citizen.</rdfs:comment>
         <rdfs:label xml:lang="en">citizenship</rdfs:label>
         <rdfs:label xml:lang="fr">nationalité</rdfs:label>
@@ -627,6 +668,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Les premiers mots d&apos;un document qui permettent de l&apos;identifier.</rdfs:comment>
         <rdfs:comment xml:lang="en">The first few words or sentence of a document, used to identify it.</rdfs:comment>
         <rdfs:label xml:lang="en">incipit</rdfs:label>
         <rdfs:label xml:lang="fr">incipit</rdfs:label>
@@ -650,6 +692,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#language">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">La ou les langues, naturelles ou artificielles, dans lesquelles un document est rédigé.</rdfs:comment>
         <rdfs:comment xml:lang="en">The langage, either natural or artificial, in which a document is written.</rdfs:comment>
         <rdfs:label xml:lang="fr">langage</rdfs:label>
         <rdfs:label xml:lang="en">language</rdfs:label>
@@ -702,6 +745,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rdfs:comment xml:lang="en">A moral or physical person.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne physique ou morale.</rdfs:comment>
         <rdfs:label xml:lang="fr">Acteur</rdfs:label>
         <rdfs:label xml:lang="en">Actor</rdfs:label>
     </owl:Class>
@@ -711,6 +755,8 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address">
+        <rdfs:comment xml:lang="en">A physical address that allows the identification of a location by a set of informations.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une adresse phyque, qui permet d&apos;identifier un lieu par un ensemble d&apos;information.</rdfs:comment>
         <rdfs:label xml:lang="en">Address</rdfs:label>
         <rdfs:label xml:lang="fr">Adresse</rdfs:label>
     </owl:Class>
@@ -721,7 +767,8 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#ArchivePlace">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-        <rdfs:comment xml:lang="en">A place that specializes in stocking a large number of letters and other documents.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A location that specializes in stocking a large number of letters and other documents.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un lieu spécialisé dans le stockage d&apos;un grand nombre de documents et lettres.</rdfs:comment>
         <rdfs:label xml:lang="fr">LieuDArchivage</rdfs:label>
         <rdfs:label xml:lang="en">PlaceOfArchiving</rdfs:label>
     </owl:Class>
@@ -734,6 +781,7 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:comment>A scientific document, quoted or referenced to.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un document scientifique, qui peut être cité ou utilisé comme référence.</rdfs:comment>
         <rdfs:label xml:lang="en">Article</rdfs:label>
         <rdfs:label xml:lang="fr">Article</rdfs:label>
     </owl:Class>
@@ -744,6 +792,8 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:comment xml:lang="en">Any kind of document that can be archived and digitised.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Tout type de document pouvant être archivé et digitalisé.</rdfs:comment>
         <rdfs:label xml:lang="en">Document</rdfs:label>
         <rdfs:label xml:lang="fr">Document</rdfs:label>
     </owl:Class>
@@ -766,6 +816,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor"/>
+        <rdfs:comment xml:lang="fr">Une personne morale.</rdfs:comment>
         <rdfs:label xml:lang="en">A moral person.</rdfs:label>
         <rdfs:label xml:lang="en">Institution</rdfs:label>
         <rdfs:label xml:lang="fr">Institution</rdfs:label>
@@ -777,7 +828,8 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
-        <rdfs:comment xml:lang="en">A document sent from one person to an other.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A document sent from one person to an other in the aim of communicating.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un document envoyé d&apos;une personne à une autre pour communiquer.</rdfs:comment>
         <rdfs:label xml:lang="en">Letter</rdfs:label>
         <rdfs:label xml:lang="fr">Lettre</rdfs:label>
     </owl:Class>
@@ -790,6 +842,7 @@
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor"/>
         <rdfs:comment xml:lang="en">A physical person.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne physique.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
         <rdfs:label xml:lang="fr">Personne</rdfs:label>
     </owl:Class>
@@ -799,7 +852,8 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place">
-        <rdfs:comment xml:lang="en">A physical place.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A physical location.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un lieu.</rdfs:comment>
         <rdfs:label xml:lang="fr">Lieu</rdfs:label>
         <rdfs:label xml:lang="en">Place</rdfs:label>
     </owl:Class>
@@ -809,6 +863,7 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject">
+        <rdfs:comment xml:lang="fr">Le sujet d&apos;une lettre, qu&apos;il soit personnel ou professionel. Il peut concerner des évènements, ou des concepts théoriques.</rdfs:comment>
         <rdfs:comment xml:lang="en">The subject of a letter, be it personal or professional. It may includes real life events, or theorethical concepts.</rdfs:comment>
         <rdfs:label xml:lang="en">Subject</rdfs:label>
         <rdfs:label xml:lang="fr">Sujet</rdfs:label>
