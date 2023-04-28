@@ -51,6 +51,14 @@
     
 
 
+    <!-- http://purl.org/dc/terms/references -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/references">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#childOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#childOf">
@@ -526,6 +534,29 @@
     
 
 
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/language">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#language"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasTitle"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#institutionName"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#birthDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#birthDate">
@@ -570,6 +601,8 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#dateOfWriting -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#dateOfWriting">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/created"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
@@ -725,6 +758,49 @@
         <rdfs:comment xml:lang="en">The level of confidentitality of a letter, which can be private, destined to a given individual, or have a more broad destination, like a publication.</rdfs:comment>
         <rdfs:label xml:lang="fr">confidentialité</rdfs:label>
         <rdfs:label xml:lang="en">privacy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#earliestPossibleWritingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#earliestPossibleWritingDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Earliest possible date on when the document might been written. For example, for letters, it can be the writing date of the letter to which that letter replies.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">La plus ancienne date à partir de laquelle le document a pu être écrit. Par exemple, pour les lettres, cela peut être la date d’écriture de la lettre à laquelle cette lettre répond.</rdfs:comment>
+        <rdfs:label xml:lang="en">earliestPossibleWritingDate</rdfs:label>
+        <rdfs:label xml:lang="fr">écritAuPlusTôtLe</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/created"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">Date of when the document might have been written.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Date à laquelle le document a pu être écrit.</rdfs:comment>
+        <rdfs:label xml:lang="fr">dateDEcritureHypothétique</rdfs:label>
+        <rdfs:label xml:lang="en">hypotheticalWritingDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#latestPossibleWritingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#latestPossibleWritingDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="fr">La plus récente date jusqu’à laquelle le document a pu être écrit. Par exemple, pour les lettres, cela peut être la date d’écriture de la réponse.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Latest possible date on when the document might been written. For example, for letters, it can be the answer writing date.</rdfs:comment>
+        <rdfs:label xml:lang="en">latestPossibleWritingDate</rdfs:label>
+        <rdfs:label xml:lang="fr">écritAuPlusTardLe</rdfs:label>
     </owl:DatatypeProperty>
     
 
