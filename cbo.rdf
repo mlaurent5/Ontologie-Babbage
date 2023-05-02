@@ -59,6 +59,14 @@
     
 
 
+    <!-- http://purl.org/dc/terms/subject -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/subject">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasSubject"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#childOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#childOf">
@@ -473,7 +481,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#siblingOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
         <rdfs:comment xml:lang="fr">Quelqu&apos;un qui est identifié comme ayant les mêmes parents que la personne considérée.</rdfs:comment>
@@ -537,6 +544,19 @@
     <!-- http://purl.org/dc/terms/created -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/date">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#birthDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#deathDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#earliestPossibleWritingDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#latestPossibleWritingDate"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -816,6 +836,22 @@
     
 
 
+    <!-- http://purl.org/dc/terms/BibliographicRessource -->
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/BibliographicRessource">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/Location -->
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Location">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor">
@@ -988,6 +1024,7 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
