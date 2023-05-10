@@ -532,14 +532,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasDuration -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasDuration">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#locatedAt -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#locatedAt">
@@ -1029,24 +1021,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration">
-        <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#duration"/>
-        <rdfs:comment xml:lang="fr">Le temps passé, pour une personne donnée, à occuper une position, travailler au sein d&apos;une organisation ou pratiquer une profession.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The duration, for a person, of time spent occupying a position, working at an institution or working through a given profession.</rdfs:comment>
-        <rdfs:label xml:lang="en">Duration</rdfs:label>
-        <rdfs:label xml:lang="fr">Durée</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.w3.org/2006/time#duration -->
-
-    <owl:Class rdf:about="http://www.w3.org/2006/time#duration"/>
-    
-
-
     <!-- http://xmlns.com/foaf/0.1/Agent -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/>
@@ -1070,30 +1044,6 @@
     <!-- http://xmlns.com/foaf/0.1/Person -->
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration"/>
-        </owl:members>
-    </rdf:Description>
 </rdf:RDF>
 
 
