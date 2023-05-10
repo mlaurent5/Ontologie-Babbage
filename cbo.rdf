@@ -75,6 +75,22 @@
     
 
 
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#admits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#admits">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isMemberOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership"/>
+        <rdfs:comment xml:lang="en">An institution can have different members.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une organisation peut avoir plusieurs membres.</rdfs:comment>
+        <rdfs:label xml:lang="fr">admet</rdfs:label>
+        <rdfs:label xml:lang="en">admits</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#childOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#childOf">
@@ -169,22 +185,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasMember -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasMember">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isMemberOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="en">An institution can have different members.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une organisation peut avoir plusieurs membres.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourMembre</rdfs:label>
-        <rdfs:label xml:lang="en">hasMember</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasReply -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasReply">
@@ -208,10 +208,10 @@
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isScientificDomainOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
-        <rdfs:comment>A person can be proficient in one or more scientific fields.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une personne peut être compétente dans un ou plusieurs domaines scientifiques.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A practice is linked to one or more scientific fields.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une pratique est liée à un ou plusieurs domaines scientifiques.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourDomaineScientifique</rdfs:label>
         <rdfs:label xml:lang="en">hasScientificField</rdfs:label>
     </owl:ObjectProperty>
@@ -279,12 +279,12 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isMemberOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
         <rdfs:comment xml:lang="fr">L&apos;institution à laquelle cette personne appartient.</rdfs:comment>
         <rdfs:comment xml:lang="en">The organization to which this person belongs.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estMembreDe</rdfs:label>
-        <rdfs:label xml:lang="en">isMemberOf</rdfs:label>
+        <rdfs:label xml:lang="fr">estAdmisePar</rdfs:label>
+        <rdfs:label xml:lang="en">isAdmittedBy</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -397,7 +397,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
         <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle une personne vit.</rdfs:comment>
         <rdfs:comment xml:lang="en">The address at which a person lives.</rdfs:comment>
         <rdfs:label xml:lang="en">livesAt</rdfs:label>
@@ -507,10 +507,10 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#workplace">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
         <rdfs:comment xml:lang="en">A person that is working at this place.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une personne qui travaille en ce lieu.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une pratique qui se déroule dans ce lieu.</rdfs:comment>
         <rdfs:label xml:lang="fr">lieuDeTravail</rdfs:label>
         <rdfs:label xml:lang="en">workplace</rdfs:label>
     </owl:ObjectProperty>
@@ -547,14 +547,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasInhabitation -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasLocation -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasInhabitation">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isInhabitationOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
-        <rdfs:comment xml:lang="fr">habite</rdfs:comment>
-        <rdfs:comment xml:lang="en">hasInhabitation</rdfs:comment>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasLocation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
     </owl:ObjectProperty>
     
 
@@ -583,13 +581,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isInhabitationOf -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isLocationOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isInhabitationOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:label xml:lang="fr">estHabitatDe</rdfs:label>
-        <rdfs:label xml:lang="en">isInhabitationOf</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isLocationOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
     </owl:ObjectProperty>
     
 
