@@ -623,6 +623,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#placeOfBirth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#placeOfBirth">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:comment xml:lang="fr">Le lieu de naissance d&apos;une personne.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The location at which a person was born.</rdfs:comment>
+        <rdfs:label xml:lang="fr">lieuDeNaissance</rdfs:label>
+        <rdfs:label xml:lang="en">placeOfBirth</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#placeOfDeath -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#placeOfDeath">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:comment xml:lang="fr">Le lieu de mort d&apos;une personne.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The location at which a person died.</rdfs:comment>
+        <rdfs:label xml:lang="fr">lieuDeDécès</rdfs:label>
+        <rdfs:label xml:lang="en">placeOfDeath</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references">
@@ -769,19 +797,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#education -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#education">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Les études réalisées par une personne.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The studies a person undertook.</rdfs:comment>
-        <rdfs:label xml:lang="en">education</rdfs:label>
-        <rdfs:label xml:lang="fr">éducation</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#familyName -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#familyName">
@@ -854,6 +869,7 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#institutionName -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#institutionName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="fr">Le nom permettant d&apos;identifier une institution.</rdfs:comment>
@@ -909,6 +925,7 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#beginningDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#beginningDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="fr">La date indicative du début d&apos;un intervalle de temps.</rdfs:comment>
@@ -936,6 +953,7 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#endDate -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#endDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="fr">La date indicative de la fin d&apos;un intervalle de temps.</rdfs:comment>
@@ -949,6 +967,7 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#folioNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#folioNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:label xml:lang="en">Indicates the number attributed to the letter in its corpus.</rdfs:label>
