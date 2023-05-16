@@ -11,7 +11,7 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:Babbage2="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo">
-        <dc:description xml:lang="en">An ontology about the correpondence of Charles Babbage.</dc:description>
+        <dc:description xml:lang="en">An ontology about the correspondence of Charles Babbage.</dc:description>
         <rdfs:comment xml:lang="fr">Une ontologie sur la correspondance de Charles Babbage.</rdfs:comment>
         <rdfs:label xml:lang="en">cbo</rdfs:label>
         <rdfs:label xml:lang="fr">ocb</rdfs:label>
@@ -97,6 +97,7 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasAddress -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasAddress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
         <rdfs:comment xml:lang="fr">L&apos;adresse qui correspond à un lieu.</rdfs:comment>
@@ -722,6 +723,7 @@
         <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasName"/>
         <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasTitle"/>
         <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#institutionName"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasQualifier"/>
     </owl:DatatypeProperty>
     
 
@@ -964,6 +966,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#fieldName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#fieldName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le nom utilisé pour qualifier une discipline.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The name used to qualify the field.</rdfs:comment>
+        <rdfs:label xml:lang="en">fieldName</rdfs:label>
+        <rdfs:label xml:lang="fr">nomDiscipline</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#folioNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#folioNumber">
@@ -974,6 +989,19 @@
         <rdfs:label xml:lang="fr">Indique le numéro attribuée à la lettre dans son corpus.</rdfs:label>
         <rdfs:label xml:lang="en">folioNumber</rdfs:label>
         <rdfs:label xml:lang="fr">numéroDeFeuillet</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasQualifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasQualifier">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le nom d&apos;un lieu.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The name of a location.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourQualificatif</rdfs:label>
+        <rdfs:label xml:lang="en">hasQualifier</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1252,12 +1280,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Mathématiques -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Mathématiques">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
         <Babbage2:isDestinationAdressOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_1"/>
         <Babbage2:physicalAddress>5 Devonshire Street Portland Place London</Babbage2:physicalAddress>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#babbage_discipline_maths -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#babbage_discipline_maths">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
+        <Babbage2:hasScientificField rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Mathématiques"/>
     </owl:NamedIndividual>
     
 
@@ -1286,6 +1331,7 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <Babbage2:hasDestinationAddress rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1"/>
         <Babbage2:isSentTo rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#charles_babbage"/>
         <Babbage2:dateOfWriting rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">1815-12-04</Babbage2:dateOfWriting>
@@ -1298,6 +1344,7 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
         <Babbage2:hasDestinationAddress rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1"/>
         <Babbage2:isSentTo rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#charles_babbage"/>
         <Babbage2:dateOfWriting>1824-07-24</Babbage2:dateOfWriting>
