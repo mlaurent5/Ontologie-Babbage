@@ -7,10 +7,11 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cbo1="http://www.semanticweb.org/marcl/ontologies/2023/cbo#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:Babbage2="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo">
         <dc:description xml:lang="en">An ontology about the correspondence of Charles Babbage.</dc:description>
         <rdfs:comment xml:lang="fr">Une ontologie sur la correspondance de Charles Babbage.</rdfs:comment>
         <rdfs:label xml:lang="en">cbo</rdfs:label>
@@ -56,7 +57,7 @@
     <!-- http://purl.org/dc/terms/isPartOf -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isPartOf">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#belongsToSubject"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#belongsToSubject"/>
     </owl:ObjectProperty>
     
 
@@ -64,7 +65,7 @@
     <!-- http://purl.org/dc/terms/references -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/references">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references"/>
     </owl:ObjectProperty>
     
 
@@ -72,435 +73,17 @@
     <!-- http://purl.org/dc/terms/subject -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/subject">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasSubject"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSubject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#childOf -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#belongsToSubject -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#childOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#relatedTo"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#parentOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="fr">Les personnes indentifiées dont un individu est le descendant.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The identified persons from which someone descends.</rdfs:comment>
-        <rdfs:label xml:lang="en">childOf</rdfs:label>
-        <rdfs:label xml:lang="fr">enfantDe</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasAddress -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasAddress">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-        <rdfs:comment xml:lang="fr">L&apos;adresse qui correspond à un lieu.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The adress which corresponds to a place.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourAddresse</rdfs:label>
-        <rdfs:label xml:lang="en">hasAddress</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasArchivedAdress -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasArchivedAdress">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isArchiveAdressOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#ArchivePlace"/>
-        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle une lettre est archivée aujourd&apos;hui.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The adress at which a letter is archived today.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourAdresseDArchivage</rdfs:label>
-        <rdfs:label xml:lang="en">hasArchivedAddress</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasBirthPlace -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasBirthPlace">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isBirthPlaceOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-        <rdfs:comment xml:lang="fr">Le lieu de naissance d&apos;une ou plusieurs personnes.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The birth place of one or more persons.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourlieuDeNaissance</rdfs:label>
-        <rdfs:label xml:lang="en">hasBirthPlace</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasCorrespondent -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasCorrespondent">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="en">A person that was either the writer or the receiver of the letter.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une personne concernée par la lettre, qui l&apos;a reçue ou écrite.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourCorrespondant</rdfs:label>
-        <rdfs:label xml:lang="en">hasCorrespondent</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasDestinationAddress -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasDestinationAddress">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isDestinationAdressOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle la lettre a été envoyée.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The adress to which the letter was sent.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourAdresseDeDestination</rdfs:label>
-        <rdfs:label xml:lang="en">hasDestinationAddress</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasInstitution -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasInstitution">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isInstitutionOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
-        <rdfs:comment xml:lang="fr">L&apos;institution à laquelle cette personne appartient.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The organization to which this person belongs.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourInstitution</rdfs:label>
-        <rdfs:label xml:lang="en">hasInstitution</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasReply -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasReply">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isResponseOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:comment xml:lang="fr">La lettre qui est la réponse de celle-ci.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The letter which replied to this one.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourRéponse</rdfs:label>
-        <rdfs:label xml:lang="en">hasReply</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasScientificField -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasScientificField">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isScientificDomainOf"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
-        <rdfs:comment xml:lang="en">A practice is linked to one or more scientific fields.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une pratique est liée à un ou plusieurs domaines scientifiques.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourDomaineScientifique</rdfs:label>
-        <rdfs:label xml:lang="en">hasScientificField</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasSubject -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasSubject">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSubjectOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
-        <rdfs:comment xml:lang="en">A letter can have a single subject, multiple ones, or none in particular.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une lettre peut avoir un sujet, plusieurs, ou aucun en particulier.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourSujet</rdfs:label>
-        <rdfs:label xml:lang="en">hasSubject</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isArchiveAdressOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isArchiveAdressOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#ArchivePlace"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:comment xml:lang="en">An archive can contain multiple letters.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Un lieu d&apos;archivage peut entreposer de multiples lettres.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estLAdresseDArchivageDe</rdfs:label>
-        <rdfs:label xml:lang="en">isArchiveAdressOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isBirthPlaceOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isBirthPlaceOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="en">A person that was born at this place.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une personne qui est née en ce lieu.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estLeLieuDeNaissanceDe</rdfs:label>
-        <rdfs:label xml:lang="en">isBirthPlaceOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isDestinationAdressOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isDestinationAdressOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:comment xml:lang="en">A letter that was sent to the given address.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">La lettre dont une adresse est la destination.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estLAdresseDeDestinationDe</rdfs:label>
-        <rdfs:label xml:lang="en">isDestinationAdressOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isInstitutionOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isInstitutionOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership"/>
-        <rdfs:comment xml:lang="en">An institution can have different members.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une organisation peut avoir plusieurs membres.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estLInstitutionDe</rdfs:label>
-        <rdfs:label xml:lang="en">isInstitutionOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isReceiverOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isReceiverOf">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSentTo"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:comment xml:lang="en">A letter received by the person.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une lettre reçue par la personne.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estLeReceveurDe</rdfs:label>
-        <rdfs:label xml:lang="en">isReceiverOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isResponseOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isResponseOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:comment xml:lang="fr">La lettre dont celle-ci est la réponse.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The letter to which this one responded.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estRéponseDe</rdfs:label>
-        <rdfs:label xml:lang="en">isResponseOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isScientificDomainOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isScientificDomainOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="en">A person may practice different scientific field.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une personne peut pratiquer différentes disciplines.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estLeDomaineScientifiqueDe</rdfs:label>
-        <rdfs:label xml:lang="en">isScientificDomainOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSenderOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSenderOf">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSentBy"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:comment xml:lang="en">A letter sent by the person.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une lettre écrite par la personne.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estLEnvoyeurDe</rdfs:label>
-        <rdfs:label xml:lang="en">isSenderOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSentBy -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSentBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasCorrespondent"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="fr">La personne qui a écrit la lettre.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The person who wrote the letter.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estEnvoyéePar</rdfs:label>
-        <rdfs:label xml:lang="en">isSentBy</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSentTo -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSentTo">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasCorrespondent"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="fr">La personne à qui la lettre est adressée.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The person to whom the latter is addressed.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estEnvoyéeA</rdfs:label>
-        <rdfs:label xml:lang="en">isSentTo</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSubjectOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSubjectOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:comment xml:lang="en">A letter that concerns the subject.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une lettre qui traite du sujet.</rdfs:comment>
-        <rdfs:label xml:lang="fr">estSujetDe</rdfs:label>
-        <rdfs:label xml:lang="en">isSubjectOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#livesAt -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#livesAt">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
-        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle une personne vit.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The address at which a person lives.</rdfs:comment>
-        <rdfs:label xml:lang="en">livesAt</rdfs:label>
-        <rdfs:label xml:lang="fr">vitA</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#parentOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#parentOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#relatedTo"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="en">A person that is identified as being a child of this one.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une personne identifiée comme étant l&apos;enfant de celle-ci.</rdfs:comment>
-        <rdfs:label xml:lang="fr">parentDe</rdfs:label>
-        <rdfs:label xml:lang="en">parentOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#referencesDocument -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#referencesDocument">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
-        <rdfs:comment xml:lang="en">A document which the letter references.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Un document que la lettre cite.</rdfs:comment>
-        <rdfs:label xml:lang="fr">citeDocument</rdfs:label>
-        <rdfs:label xml:lang="en">referencesDocument</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#referencesPerson -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#referencesPerson">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="en">A person which the letter references.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une personne que la lettre cite.</rdfs:comment>
-        <rdfs:label xml:lang="fr">citePersonne</rdfs:label>
-        <rdfs:label xml:lang="en">referencesPerson</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#referencesPlace -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#referencesPlace">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-        <rdfs:comment xml:lang="en">A place that is referenced by the letter.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Un lieu que la lettre cite.</rdfs:comment>
-        <rdfs:label xml:lang="fr">citeLieu</rdfs:label>
-        <rdfs:label xml:lang="en">referencesPlace</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#sentAddress -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#sentAddress">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-        <rdfs:comment xml:lang="fr">L&apos;adresse depuis laquelle la lettre a été envoyée.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The adress from which the letter was sent.</rdfs:comment>
-        <rdfs:label xml:lang="fr">adresseDEnvoi</rdfs:label>
-        <rdfs:label xml:lang="en">sentAddress</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#siblingOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#siblingOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#relatedTo"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#belongsToSubject">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="fr">Quelqu&apos;un qui est identifié comme ayant les mêmes parents que la personne considérée.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Somebody that is identified as being related to the given person by way of similar parents.</rdfs:comment>
-        <rdfs:label xml:lang="fr">frèreOuSoeurDe</rdfs:label>
-        <rdfs:label xml:lang="en">siblingOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#workplace -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#workplace">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-        <rdfs:comment xml:lang="en">A person that is working at this place.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une pratique qui se déroule dans ce lieu.</rdfs:comment>
-        <rdfs:label xml:lang="fr">lieuDeTravail</rdfs:label>
-        <rdfs:label xml:lang="en">workplace</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#belongsToSubject -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#belongsToSubject">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Subject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Subject"/>
         <rdfs:comment xml:lang="en">Define which subjects are encompassing this one.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Définit le ou les sujets qui englobent celui-ci.</rdfs:comment>
         <rdfs:label xml:lang="fr">appartientAuSujet</rdfs:label>
@@ -509,15 +92,104 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasDuration -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#childOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasDuration">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#childOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#relatedTo"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#parentOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="fr">Les personnes indentifiées dont un individu est le descendant.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The identified persons from which someone descends.</rdfs:comment>
+        <rdfs:label xml:lang="en">childOf</rdfs:label>
+        <rdfs:label xml:lang="fr">enfantDe</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasAddress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse qui correspond à un lieu.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The adress which corresponds to a place.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourAddresse</rdfs:label>
+        <rdfs:label xml:lang="en">hasAddress</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasArchivedAdress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasArchivedAdress">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isArchiveAdressOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#ArchivePlace"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle une lettre est archivée aujourd&apos;hui.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The adress at which a letter is archived today.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourAdresseDArchivage</rdfs:label>
+        <rdfs:label xml:lang="en">hasArchivedAddress</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasBirthPlace -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasBirthPlace">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isBirthPlaceOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:comment xml:lang="fr">Le lieu de naissance d&apos;une ou plusieurs personnes.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The birth place of one or more persons.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourlieuDeNaissance</rdfs:label>
+        <rdfs:label xml:lang="en">hasBirthPlace</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasCorrespondent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasCorrespondent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="en">A person that was either the writer or the receiver of the letter.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne concernée par la lettre, qui l&apos;a reçue ou écrite.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourCorrespondant</rdfs:label>
+        <rdfs:label xml:lang="en">hasCorrespondent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasDestinationAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasDestinationAddress">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isDestinationAdressOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle la lettre a été envoyée.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The adress to which the letter was sent.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourAdresseDeDestination</rdfs:label>
+        <rdfs:label xml:lang="en">hasDestinationAddress</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasDuration -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasDuration">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Inhabitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Membership"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Duration"/>
         <rdfs:comment xml:lang="fr">La durée d&apos;une occurence, que ce soit l&apos;habitation d&apos;un lieu, la pratique d&apos;une discipline, ou l&apos;appartenance à une institution.</rdfs:comment>
         <rdfs:comment xml:lang="en">The duration of an event, be it the inhabitation of a localisation, the practice in a field, or the membership to an institution.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourDurée</rdfs:label>
@@ -526,13 +198,28 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasLocation -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasInstitution -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasLocation">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isLocationOf"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasInstitution">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isInstitutionOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Membership"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Institution"/>
+        <rdfs:comment xml:lang="fr">L&apos;institution à laquelle cette personne appartient.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The organization to which this person belongs.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourInstitution</rdfs:label>
+        <rdfs:label xml:lang="en">hasInstitution</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasLocation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isLocationOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Inhabitation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
         <rdfs:comment xml:lang="fr">La localisation d&apos;une habitation donnée.</rdfs:comment>
         <rdfs:comment xml:lang="en">The location corresponding to an habitation.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourLocalisation</rdfs:label>
@@ -541,13 +228,13 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasMembership -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasMembership -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasMembership">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isMembershipOf"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasMembership">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isMembershipOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Membership"/>
         <rdfs:comment xml:lang="fr">L&apos;appartenance à une institution pour une personne donnée, qui peut n&apos;être effective que pour un epériode donnée.</rdfs:comment>
         <rdfs:comment xml:lang="en">The membership to an istitution by a given person, that may only be true for a defined span of time.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourAdhésion</rdfs:label>
@@ -556,13 +243,13 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasPractice -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPractice -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasPractice">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isPracticeOf"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPractice">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPracticeOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
         <rdfs:comment xml:lang="en">The practice in a given field by a giiven person, that may or may not be maintained only for a given span of time.</rdfs:comment>
         <rdfs:comment>Une pratique d&apos;un domaine par la personne, qui peut avoir lieu seulement pour une durée définie.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourPratique</rdfs:label>
@@ -571,12 +258,111 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isLocationOf -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasReply -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isLocationOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasReply">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isResponseOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:comment xml:lang="fr">La lettre qui est la réponse de celle-ci.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The letter which replied to this one.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourRéponse</rdfs:label>
+        <rdfs:label xml:lang="en">hasReply</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasScientificField -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasScientificField">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isScientificDomainOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Field"/>
+        <rdfs:comment xml:lang="en">A practice is linked to one or more scientific fields.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une pratique est liée à un ou plusieurs domaines scientifiques.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourDomaineScientifique</rdfs:label>
+        <rdfs:label xml:lang="en">hasScientificField</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSubject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSubject">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSubjectOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Subject"/>
+        <rdfs:comment xml:lang="en">A letter can have a single subject, multiple ones, or none in particular.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre peut avoir un sujet, plusieurs, ou aucun en particulier.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourSujet</rdfs:label>
+        <rdfs:label xml:lang="en">hasSubject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isArchiveAdressOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isArchiveAdressOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#ArchivePlace"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:comment xml:lang="en">An archive can contain multiple letters.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un lieu d&apos;archivage peut entreposer de multiples lettres.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLAdresseDArchivageDe</rdfs:label>
+        <rdfs:label xml:lang="en">isArchiveAdressOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isBirthPlaceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isBirthPlaceOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="en">A person that was born at this place.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne qui est née en ce lieu.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLeLieuDeNaissanceDe</rdfs:label>
+        <rdfs:label xml:lang="en">isBirthPlaceOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isDestinationAdressOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isDestinationAdressOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:comment xml:lang="en">A letter that was sent to the given address.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">La lettre dont une adresse est la destination.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLAdresseDeDestinationDe</rdfs:label>
+        <rdfs:label xml:lang="en">isDestinationAdressOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isInstitutionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isInstitutionOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Institution"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Membership"/>
+        <rdfs:comment xml:lang="en">An institution can have different members.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une organisation peut avoir plusieurs membres.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLInstitutionDe</rdfs:label>
+        <rdfs:label xml:lang="en">isInstitutionOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isLocationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isLocationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Inhabitation"/>
         <rdfs:comment xml:lang="fr">La localisation d&apos;une habitation.</rdfs:comment>
         <rdfs:comment xml:lang="en">The location implied by an inhabitation.</rdfs:comment>
         <rdfs:label xml:lang="fr">estLaLocalisationDe</rdfs:label>
@@ -585,12 +371,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isMembershipOf -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isMembershipOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isMembershipOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isMembershipOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Membership"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
         <rdfs:comment xml:lang="fr">La personne concernée par l&apos;adhésion.</rdfs:comment>
         <rdfs:comment xml:lang="en">The person that is involved by the membership.</rdfs:comment>
         <rdfs:label xml:lang="fr">estAdhésionDe</rdfs:label>
@@ -599,23 +385,137 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isPracticeOf -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPracticeOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isPracticeOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPracticeOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
         <rdfs:label xml:lang="fr">estPratiqueDe</rdfs:label>
         <rdfs:label xml:lang="en">isPracticeOf</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#locatedAt -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isReceiverOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#locatedAt">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isReceiverOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSentTo"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:comment xml:lang="en">A letter received by the person.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre reçue par la personne.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLeReceveurDe</rdfs:label>
+        <rdfs:label xml:lang="en">isReceiverOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isResponseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isResponseOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:comment xml:lang="fr">La lettre dont celle-ci est la réponse.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The letter to which this one responded.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estRéponseDe</rdfs:label>
+        <rdfs:label xml:lang="en">isResponseOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isScientificDomainOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isScientificDomainOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Field"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="en">A person may practice different scientific field.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne peut pratiquer différentes disciplines.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLeDomaineScientifiqueDe</rdfs:label>
+        <rdfs:label xml:lang="en">isScientificDomainOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSenderOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSenderOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSentBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:comment xml:lang="en">A letter sent by the person.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre écrite par la personne.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLEnvoyeurDe</rdfs:label>
+        <rdfs:label xml:lang="en">isSenderOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSentBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSentBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasCorrespondent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="fr">La personne qui a écrit la lettre.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The person who wrote the letter.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estEnvoyéePar</rdfs:label>
+        <rdfs:label xml:lang="en">isSentBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSentTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSentTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasCorrespondent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="fr">La personne à qui la lettre est adressée.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The person to whom the latter is addressed.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estEnvoyéeA</rdfs:label>
+        <rdfs:label xml:lang="en">isSentTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSubjectOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSubjectOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Subject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:comment xml:lang="en">A letter that concerns the subject.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre qui traite du sujet.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estSujetDe</rdfs:label>
+        <rdfs:label xml:lang="en">isSubjectOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#livesAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#livesAt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Inhabitation"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse à laquelle une personne vit.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The address at which a person lives.</rdfs:comment>
+        <rdfs:label xml:lang="en">livesAt</rdfs:label>
+        <rdfs:label xml:lang="fr">vitA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#locatedAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Institution"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
         <rdfs:comment xml:lang="fr">L&apos;endroit auquel une organisation est située.</rdfs:comment>
         <rdfs:comment xml:lang="en">The place at which an organization may be found.</rdfs:comment>
         <rdfs:label xml:lang="en">locatedAt</rdfs:label>
@@ -624,12 +524,28 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#placeOfBirth -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#parentOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#placeOfBirth">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#parentOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#relatedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="en">A person that is identified as being a child of this one.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne identifiée comme étant l&apos;enfant de celle-ci.</rdfs:comment>
+        <rdfs:label xml:lang="fr">parentDe</rdfs:label>
+        <rdfs:label xml:lang="en">parentOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#placeOfBirth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#placeOfBirth">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
         <rdfs:comment xml:lang="fr">Le lieu de naissance d&apos;une personne.</rdfs:comment>
         <rdfs:comment xml:lang="en">The location at which a person was born.</rdfs:comment>
         <rdfs:label xml:lang="fr">lieuDeNaissance</rdfs:label>
@@ -638,12 +554,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#placeOfDeath -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#placeOfDeath -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#placeOfDeath">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#placeOfDeath">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
         <rdfs:comment xml:lang="fr">Le lieu de mort d&apos;une personne.</rdfs:comment>
         <rdfs:comment xml:lang="en">The location at which a person died.</rdfs:comment>
         <rdfs:label xml:lang="fr">lieuDeDécès</rdfs:label>
@@ -652,9 +568,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#references -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references">
         <rdfs:comment xml:lang="en">A ressource that is quoted or named by the letter.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Une ressource citée ou nommé dans la lettre.</rdfs:comment>
         <rdfs:label xml:lang="fr">cite</rdfs:label>
@@ -663,15 +579,100 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#relatedTo -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#referencesDocument -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#relatedTo">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#referencesDocument">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
+        <rdfs:comment xml:lang="en">A document which the letter references.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un document que la lettre cite.</rdfs:comment>
+        <rdfs:label xml:lang="fr">citeDocument</rdfs:label>
+        <rdfs:label xml:lang="en">referencesDocument</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#referencesPerson -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#referencesPerson">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="en">A person which the letter references.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne que la lettre cite.</rdfs:comment>
+        <rdfs:label xml:lang="fr">citePersonne</rdfs:label>
+        <rdfs:label xml:lang="en">referencesPerson</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#referencesPlace -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#referencesPlace">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:comment xml:lang="en">A place that is referenced by the letter.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un lieu que la lettre cite.</rdfs:comment>
+        <rdfs:label xml:lang="fr">citeLieu</rdfs:label>
+        <rdfs:label xml:lang="en">referencesPlace</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#relatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#relatedTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
         <rdfs:comment xml:lang="en">A family relation of the person.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Une relation familiale de la personne considérée.</rdfs:comment>
         <rdfs:label xml:lang="fr">apparentéA</rdfs:label>
         <rdfs:label xml:lang="en">relatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#sentAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#sentAddress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse depuis laquelle la lettre a été envoyée.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The adress from which the letter was sent.</rdfs:comment>
+        <rdfs:label xml:lang="fr">adresseDEnvoi</rdfs:label>
+        <rdfs:label xml:lang="en">sentAddress</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#siblingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#siblingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#relatedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="fr">Quelqu&apos;un qui est identifié comme ayant les mêmes parents que la personne considérée.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Somebody that is identified as being related to the given person by way of similar parents.</rdfs:comment>
+        <rdfs:label xml:lang="fr">frèreOuSoeurDe</rdfs:label>
+        <rdfs:label xml:lang="en">siblingOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#workplace -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#workplace">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:comment xml:lang="en">A person that is working at this place.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une pratique qui se déroule dans ce lieu.</rdfs:comment>
+        <rdfs:label xml:lang="fr">lieuDeTravail</rdfs:label>
+        <rdfs:label xml:lang="en">workplace</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -696,14 +697,14 @@
     <!-- http://purl.org/dc/terms/date -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/date">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#birthDate"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#dateOfWriting"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#deathDate"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#beginningDate"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#earliestPossibleWritingDate"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#endDate"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#latestPossibleWritingDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#beginningDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#birthDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#dateOfWriting"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#deathDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#earliestPossibleWritingDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#endDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hypotheticalWritingDate"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#latestPossibleWritingDate"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     </owl:DatatypeProperty>
     
@@ -712,7 +713,7 @@
     <!-- http://purl.org/dc/terms/language -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/language">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#language"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#language"/>
     </owl:DatatypeProperty>
     
 
@@ -720,215 +721,19 @@
     <!-- http://purl.org/dc/terms/title -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasName"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasTitle"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#institutionName"/>
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasQualifier"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasName"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasQualifier"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasTitle"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#institutionName"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#birthDate -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#beginningDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#birthDate">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#beginningDate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="fr">La date de naissance d&apos;une personne.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The birth date of a person.</rdfs:comment>
-        <rdfs:label xml:lang="en">birthDate</rdfs:label>
-        <rdfs:label xml:lang="fr">dateDeNaissance</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#citizenship -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#citizenship">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Le pays dans lequel une personne est identifiée comme citoyen.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The country in which a person is identified as a citizen.</rdfs:comment>
-        <rdfs:label xml:lang="en">citizenship</rdfs:label>
-        <rdfs:label xml:lang="fr">nationalité</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#country -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#country">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Le pays dans lequel une adresse se trouve.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The country in which an address is situated.</rdfs:comment>
-        <rdfs:label xml:lang="en">country</rdfs:label>
-        <rdfs:label xml:lang="fr">pays</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#dateOfWriting -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#dateOfWriting">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/created"/>
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="fr">La date à laquelle une lettre a été écrite.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The date at which a letter was written.</rdfs:comment>
-        <rdfs:label xml:lang="fr">dateDEcriture</rdfs:label>
-        <rdfs:label xml:lang="en">dateOfWriting</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#deathDate -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#deathDate">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="fr">La date de mort d&apos;une personne.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The death date of a person.</rdfs:comment>
-        <rdfs:label xml:lang="fr">dateDeDécès</rdfs:label>
-        <rdfs:label xml:lang="en">deathDate</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#familyName -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#familyName">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">La partie du nom d&apos;une personne qui réfère au nom de leur famille ou à celui de leur conjoint.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The parth of a person name referring to their family&apos;s name or the one of their spouse.</rdfs:comment>
-        <rdfs:label xml:lang="en">familyName</rdfs:label>
-        <rdfs:label xml:lang="fr">nomDeFamille</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#firstName -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#firstName">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">La première partie du nom entier d&apos;une personne.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The first part of a person&apos;s name.</rdfs:comment>
-        <rdfs:label xml:lang="en">firstName</rdfs:label>
-        <rdfs:label xml:lang="fr">prénom</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasName -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasName">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Le nom d&apos;un sujet, qui définit ce qu&apos;il concerne.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The name of a subject, which defines what it involves.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourNom</rdfs:label>
-        <rdfs:label xml:lang="en">hasName</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasTitle -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasTitle">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Le titre d&apos;un document donné.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The title of a given document.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourTitre</rdfs:label>
-        <rdfs:label xml:lang="en">hasTitle</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#incipit -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#incipit">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Les premiers mots d&apos;un document qui permettent de l&apos;identifier.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The first few words or sentence of a document, used to identify it.</rdfs:comment>
-        <rdfs:label xml:lang="en">incipit</rdfs:label>
-        <rdfs:label xml:lang="fr">incipit</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#institutionName -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#institutionName">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Le nom permettant d&apos;identifier une institution.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The name identifying an institution.</rdfs:comment>
-        <rdfs:label xml:lang="en">institutionName</rdfs:label>
-        <rdfs:label xml:lang="fr">nomInstitution</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#language -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#language">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">La ou les langues, naturelles ou artificielles, dans lesquelles un document est rédigé.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The langage, either natural or artificial, in which a document is written.</rdfs:comment>
-        <rdfs:label xml:lang="fr">langage</rdfs:label>
-        <rdfs:label xml:lang="en">language</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#physicalAddress -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#physicalAddress">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Adresse postale complète qui identifie un lieu unique.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Full post address, which identifies a unique place.</rdfs:comment>
-        <rdfs:label xml:lang="fr">adresseComplète</rdfs:label>
-        <rdfs:label xml:lang="en">completeAddress</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#privacy -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#privacy">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="fr">Le niveau de cofidentialité d&apos;une lettre, qui peut être privée, à destination d&apos;un individu, ou avoir une destination plus large comme pour une publication.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The level of confidentitality of a letter, which can be private, destined to a given individual, or have a more broad destination, like a publication.</rdfs:comment>
-        <rdfs:label xml:lang="fr">confidentialité</rdfs:label>
-        <rdfs:label xml:lang="en">privacy</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#beginningDate -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#beginningDate">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Duration"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="fr">La date indicative du début d&apos;un intervalle de temps.</rdfs:comment>
         <rdfs:comment xml:lang="en">The date that indicates the start of a time interval.</rdfs:comment>
@@ -938,11 +743,82 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#earliestPossibleWritingDate -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#birthDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#earliestPossibleWritingDate">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#birthDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="fr">La date de naissance d&apos;une personne.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The birth date of a person.</rdfs:comment>
+        <rdfs:label xml:lang="en">birthDate</rdfs:label>
+        <rdfs:label xml:lang="fr">dateDeNaissance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#citizenship -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#citizenship">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le pays dans lequel une personne est identifiée comme citoyen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The country in which a person is identified as a citizen.</rdfs:comment>
+        <rdfs:label xml:lang="en">citizenship</rdfs:label>
+        <rdfs:label xml:lang="fr">nationalité</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#country">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le pays dans lequel une adresse se trouve.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The country in which an address is situated.</rdfs:comment>
+        <rdfs:label xml:lang="en">country</rdfs:label>
+        <rdfs:label xml:lang="fr">pays</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#dateOfWriting -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#dateOfWriting">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/created"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="fr">La date à laquelle une lettre a été écrite.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The date at which a letter was written.</rdfs:comment>
+        <rdfs:label xml:lang="fr">dateDEcriture</rdfs:label>
+        <rdfs:label xml:lang="en">dateOfWriting</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#deathDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#deathDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="fr">La date de mort d&apos;une personne.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The death date of a person.</rdfs:comment>
+        <rdfs:label xml:lang="fr">dateDeDécès</rdfs:label>
+        <rdfs:label xml:lang="en">deathDate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#earliestPossibleWritingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#earliestPossibleWritingDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hypotheticalWritingDate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="en">Earliest possible date on when the document might been written. For example, for letters, it can be the writing date of the letter to which that letter replies.</rdfs:comment>
         <rdfs:comment xml:lang="fr">La plus ancienne date à partir de laquelle le document a pu être écrit. Par exemple, pour les lettres, cela peut être la date d’écriture de la lettre à laquelle cette lettre répond.</rdfs:comment>
@@ -952,11 +828,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#endDate -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#endDate -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#endDate">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#endDate">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Duration"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="fr">La date indicative de la fin d&apos;un intervalle de temps.</rdfs:comment>
         <rdfs:comment xml:lang="en">The date that indicates the end of a time interval.</rdfs:comment>
@@ -966,10 +842,24 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#fieldName -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#familyName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#fieldName">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#familyName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">La partie du nom d&apos;une personne qui réfère au nom de leur famille ou à celui de leur conjoint.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The parth of a person name referring to their family&apos;s name or the one of their spouse.</rdfs:comment>
+        <rdfs:label xml:lang="en">familyName</rdfs:label>
+        <rdfs:label xml:lang="fr">nomDeFamille</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#fieldName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#fieldName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Field"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="fr">Le nom utilisé pour qualifier une discipline.</rdfs:comment>
         <rdfs:comment xml:lang="en">The name used to qualify the field.</rdfs:comment>
@@ -979,11 +869,25 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#folioNumber -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#firstName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#folioNumber">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#firstName">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">La première partie du nom entier d&apos;une personne.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The first part of a person&apos;s name.</rdfs:comment>
+        <rdfs:label xml:lang="en">firstName</rdfs:label>
+        <rdfs:label xml:lang="fr">prénom</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#folioNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#folioNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:label xml:lang="en">Indicates the number attributed to the letter in its corpus.</rdfs:label>
         <rdfs:label xml:lang="fr">Indique le numéro attribuée à la lettre dans son corpus.</rdfs:label>
@@ -993,10 +897,23 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasQualifier -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasQualifier">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Subject"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le nom d&apos;un sujet, qui définit ce qu&apos;il concerne.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The name of a subject, which defines what it involves.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourNom</rdfs:label>
+        <rdfs:label xml:lang="en">hasName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasQualifier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasQualifier">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="fr">Le nom d&apos;un lieu.</rdfs:comment>
         <rdfs:comment xml:lang="en">The name of a location.</rdfs:comment>
@@ -1006,12 +923,26 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasTitle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasTitle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le titre d&apos;un document donné.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The title of a given document.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourTitre</rdfs:label>
+        <rdfs:label xml:lang="en">hasTitle</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hypotheticalWritingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hypotheticalWritingDate">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/created"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="en">Date of when the document might have been written.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Date à laquelle le document a pu être écrit.</rdfs:comment>
@@ -1021,16 +952,86 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#latestPossibleWritingDate -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#incipit -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#latestPossibleWritingDate">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hypotheticalWritingDate"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#incipit">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Les premiers mots d&apos;un document qui permettent de l&apos;identifier.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The first few words or sentence of a document, used to identify it.</rdfs:comment>
+        <rdfs:label xml:lang="en">incipit</rdfs:label>
+        <rdfs:label xml:lang="fr">incipit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#institutionName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#institutionName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Institution"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le nom permettant d&apos;identifier une institution.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The name identifying an institution.</rdfs:comment>
+        <rdfs:label xml:lang="en">institutionName</rdfs:label>
+        <rdfs:label xml:lang="fr">nomInstitution</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#language -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#language">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">La ou les langues, naturelles ou artificielles, dans lesquelles un document est rédigé.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The langage, either natural or artificial, in which a document is written.</rdfs:comment>
+        <rdfs:label xml:lang="fr">langage</rdfs:label>
+        <rdfs:label xml:lang="en">language</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#latestPossibleWritingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#latestPossibleWritingDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hypotheticalWritingDate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:comment xml:lang="fr">La plus récente date jusqu’à laquelle le document a pu être écrit. Par exemple, pour les lettres, cela peut être la date d’écriture de la réponse.</rdfs:comment>
         <rdfs:comment xml:lang="en">Latest possible date on when the document might been written. For example, for letters, it can be the answer writing date.</rdfs:comment>
         <rdfs:label xml:lang="en">latestPossibleWritingDate</rdfs:label>
         <rdfs:label xml:lang="fr">écritAuPlusTardLe</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#physicalAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#physicalAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Adresse postale complète qui identifie un lieu unique.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Full post address, which identifies a unique place.</rdfs:comment>
+        <rdfs:label xml:lang="fr">adresseComplète</rdfs:label>
+        <rdfs:label xml:lang="en">completeAddress</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#privacy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#privacy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="fr">Le niveau de cofidentialité d&apos;une lettre, qui peut être privée, à destination d&apos;un individu, ou avoir une destination plus large comme pour une publication.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The level of confidentitality of a letter, which can be private, destined to a given individual, or have a more broad destination, like a publication.</rdfs:comment>
+        <rdfs:label xml:lang="fr">confidentialité</rdfs:label>
+        <rdfs:label xml:lang="en">privacy</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1049,7 +1050,7 @@
     <!-- http://purl.org/dc/terms/BibliographicRessource -->
 
     <owl:Class rdf:about="http://purl.org/dc/terms/BibliographicRessource">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
     </owl:Class>
     
 
@@ -1057,14 +1058,14 @@
     <!-- http://purl.org/dc/terms/Location -->
 
     <owl:Class rdf:about="http://purl.org/dc/terms/Location">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Actor -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor">
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Actor">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rdfs:comment xml:lang="en">A moral or physical person.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Une personne physique ou morale.</rdfs:comment>
@@ -1074,9 +1075,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address">
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address">
         <rdfs:comment xml:lang="en">A physical address that allows the identification of a location by a set of informations.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Une adresse phyque, qui permet d&apos;identifier un lieu par un ensemble d&apos;information.</rdfs:comment>
         <rdfs:label xml:lang="en">Address</rdfs:label>
@@ -1085,10 +1086,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#ArchivePlace -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#ArchivePlace -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#ArchivePlace">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#ArchivePlace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
         <rdfs:comment xml:lang="en">A location that specializes in stocking a large number of letters and other documents.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Un lieu spécialisé dans le stockage d&apos;un grand nombre de documents et lettres.</rdfs:comment>
         <rdfs:label xml:lang="fr">LieuDArchivage</rdfs:label>
@@ -1097,11 +1098,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Article -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Article -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Article">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Article">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
         <rdfs:comment>A scientific document, quoted or referenced to.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Un document scientifique, qui peut être cité ou utilisé comme référence.</rdfs:comment>
         <rdfs:label xml:lang="en">Article</rdfs:label>
@@ -1110,9 +1111,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document">
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
         <rdfs:comment xml:lang="en">Any kind of document that can be archived and digitised.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Tout type de document pouvant être archivé et digitalisé.</rdfs:comment>
@@ -1122,81 +1123,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Duration -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field">
-        <rdfs:comment xml:lang="fr">La discipline qu&apos;une personne pratique.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The field in which a person is proficient.</rdfs:comment>
-        <rdfs:label xml:lang="fr">Discipline</rdfs:label>
-        <rdfs:label xml:lang="en">Field</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Institution">
-        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <rdfs:comment xml:lang="fr">Une personne morale.</rdfs:comment>
-        <rdfs:label xml:lang="en">A moral person.</rdfs:label>
-        <rdfs:label xml:lang="en">Institution</rdfs:label>
-        <rdfs:label xml:lang="fr">Institution</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
-        <rdfs:comment xml:lang="en">A document sent from one person to an other in the aim of communicating.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Un document envoyé d&apos;une personne à une autre pour communiquer.</rdfs:comment>
-        <rdfs:label xml:lang="en">Letter</rdfs:label>
-        <rdfs:label xml:lang="fr">Lettre</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person">
-        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor"/>
-        <rdfs:comment xml:lang="en">A physical person.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une personne physique.</rdfs:comment>
-        <rdfs:label xml:lang="en">Person</rdfs:label>
-        <rdfs:label xml:lang="fr">Personne</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place">
-        <rdfs:comment xml:lang="en">A physical location.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Un lieu.</rdfs:comment>
-        <rdfs:label xml:lang="fr">Lieu</rdfs:label>
-        <rdfs:label xml:lang="en">Place</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject">
-        <rdfs:comment xml:lang="fr">Le sujet d&apos;une lettre, qu&apos;il soit personnel ou professionel. Il peut concerner des évènements, ou des concepts théoriques.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The subject of a letter, be it personal or professional. It may includes real life events, or theorethical concepts.</rdfs:comment>
-        <rdfs:label xml:lang="en">Subject</rdfs:label>
-        <rdfs:label xml:lang="fr">Sujet</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration">
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Duration">
         <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#duration"/>
         <rdfs:comment xml:lang="fr">Le temps passé, pour une personne donnée, à occuper une position, travailler au sein d&apos;une organisation ou pratiquer une profession.</rdfs:comment>
         <rdfs:comment xml:lang="en">The duration, for a person, of time spent occupying a position, working at an institution or working through a given profession.</rdfs:comment>
@@ -1206,9 +1135,20 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Field -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation">
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Field">
+        <rdfs:comment xml:lang="fr">La discipline qu&apos;une personne pratique.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The field in which a person is proficient.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Discipline</rdfs:label>
+        <rdfs:label xml:lang="en">Field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Inhabitation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Inhabitation">
         <rdfs:comment xml:lang="en">Designates the occupancy of a place by a person, which might take place over a given period.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Désigne l&apos;occupation par une personne d&apos;un logement, éventuellement sur une période définie.</rdfs:comment>
         <rdfs:label xml:lang="fr">Habitation</rdfs:label>
@@ -1217,9 +1157,35 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Institution -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership">
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Institution">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Actor"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="fr">Une personne morale.</rdfs:comment>
+        <rdfs:label xml:lang="en">A moral person.</rdfs:label>
+        <rdfs:label xml:lang="en">Institution</rdfs:label>
+        <rdfs:label xml:lang="fr">Institution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
+        <rdfs:comment xml:lang="en">A document sent from one person to an other in the aim of communicating.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un document envoyé d&apos;une personne à une autre pour communiquer.</rdfs:comment>
+        <rdfs:label xml:lang="en">Letter</rdfs:label>
+        <rdfs:label xml:lang="fr">Lettre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Membership -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Membership">
         <rdfs:comment xml:lang="en">Designate the belonging of a person to a group, possibly for a given duration.</rdfs:comment>
         <rdfs:comment>Désigne l&apos;appartenance d&apos;une personne à un groupe, éventuellement durant une période donnée.</rdfs:comment>
         <rdfs:label xml:lang="fr">Appartenance</rdfs:label>
@@ -1228,13 +1194,48 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice">
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Actor"/>
+        <rdfs:comment xml:lang="en">A physical person.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne physique.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+        <rdfs:label xml:lang="fr">Personne</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place">
+        <rdfs:comment xml:lang="en">A physical location.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Un lieu.</rdfs:comment>
+        <rdfs:label xml:lang="fr">Lieu</rdfs:label>
+        <rdfs:label xml:lang="en">Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice">
         <rdfs:comment xml:lang="en">Designates the practice by a person of a profession or in a field, possibly for a given duration.</rdfs:comment>
         <rdfs:comment xml:lang="fr">Désigne la pratique d&apos;une discipline par une personne, éventuellement sur une période donnée.</rdfs:comment>
         <rdfs:label xml:lang="en">Practice</rdfs:label>
         <rdfs:label xml:lang="fr">Pratique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Subject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Subject">
+        <rdfs:comment xml:lang="fr">Le sujet d&apos;une lettre, qu&apos;il soit personnel ou professionel. Il peut concerner des évènements, ou des concepts théoriques.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The subject of a letter, be it personal or professional. It may includes real life events, or theorethical concepts.</rdfs:comment>
+        <rdfs:label xml:lang="en">Subject</rdfs:label>
+        <rdfs:label xml:lang="fr">Sujet</rdfs:label>
     </owl:Class>
     
 
@@ -1280,85 +1281,85 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Mathématiques -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#Mathématiques -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Mathématiques">
-        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Mathématiques">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Field"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1 -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#adresse_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-        <Babbage2:isDestinationAdressOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_1"/>
-        <Babbage2:physicalAddress>5 Devonshire Street Portland Place London</Babbage2:physicalAddress>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#adresse_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <cbo1:isDestinationAdressOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#lettre_1"/>
+        <cbo1:physicalAddress>5 Devonshire Street Portland Place London</cbo1:physicalAddress>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#babbage_discipline_maths -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#babbage_discipline_maths -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#babbage_discipline_maths">
-        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
-        <Babbage2:hasScientificField rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Mathématiques"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#babbage_discipline_maths">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
+        <cbo1:hasScientificField rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Mathématiques"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#charles_babbage -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#charles_babbage -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#charles_babbage">
-        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Person"/>
-        <Babbage2:livesAt rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#habitation_babbage"/>
-        <Babbage2:citizenship>Anglais</Babbage2:citizenship>
-        <Babbage2:familyName>Babbage</Babbage2:familyName>
-        <Babbage2:firstName>Charles</Babbage2:firstName>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#charles_babbage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <cbo1:livesAt rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#habitation_babbage"/>
+        <cbo1:citizenship>Anglais</cbo1:citizenship>
+        <cbo1:familyName>Babbage</cbo1:familyName>
+        <cbo1:firstName>Charles</cbo1:firstName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#habitation_babbage -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#habitation_babbage -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#habitation_babbage">
-        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
-        <cbo:hasLocation rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#5_devonshire_street"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#habitation_babbage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Inhabitation"/>
+        <cbo1:hasLocation rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#5_devonshire_street"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_1 -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#lettre_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <Babbage2:hasDestinationAddress rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1"/>
-        <Babbage2:isSentTo rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#charles_babbage"/>
-        <Babbage2:dateOfWriting rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">1815-12-04</Babbage2:dateOfWriting>
-        <Babbage2:language>Anglais</Babbage2:language>
-        <cbo:folioNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41</cbo:folioNumber>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#lettre_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <cbo1:hasDestinationAddress rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#adresse_1"/>
+        <cbo1:isSentTo rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#charles_babbage"/>
+        <cbo1:dateOfWriting rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">1815-12-04</cbo1:dateOfWriting>
+        <cbo1:folioNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">41</cbo1:folioNumber>
+        <cbo1:language>Anglais</cbo1:language>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_2 -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#lettre_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#lettre_2">
-        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Letter"/>
-        <Babbage2:hasDestinationAddress rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1"/>
-        <Babbage2:isSentTo rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#charles_babbage"/>
-        <Babbage2:dateOfWriting>1824-07-24</Babbage2:dateOfWriting>
-        <Babbage2:language>Anglais</Babbage2:language>
-        <cbo:folioNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">121</cbo:folioNumber>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#lettre_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <cbo1:hasDestinationAddress rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#adresse_1"/>
+        <cbo1:isSentTo rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#charles_babbage"/>
+        <cbo1:dateOfWriting>1824-07-24</cbo1:dateOfWriting>
+        <cbo1:folioNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">121</cbo1:folioNumber>
+        <cbo1:language>Anglais</cbo1:language>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#5_devonshire_street -->
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#5_devonshire_street -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#5_devonshire_street">
-        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-        <Babbage2:hasAddress rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#adresse_1"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#5_devonshire_street">
+        <rdf:type rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <cbo1:hasAddress rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#adresse_1"/>
     </owl:NamedIndividual>
     
 
@@ -1374,53 +1375,53 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Actor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Address"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Document"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Field"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Place"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#Subject"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Duration"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Inhabitation"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Membership"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#Practice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Actor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Document"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Duration"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Field"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Inhabitation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Membership"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Subject"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasAddress"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasArchivedAdress"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasBirthPlace"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasCorrespondent"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasDestinationAddress"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasInstitution"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasReply"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasScientificField"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#hasSubject"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isArchiveAdressOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isBirthPlaceOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isDestinationAdressOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isInstitutionOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isReceiverOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isResponseOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isScientificDomainOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSenderOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#isSubjectOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#livesAt"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#sentAddress"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/Babbage2#workplace"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#belongsToSubject"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasDuration"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasLocation"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasMembership"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#hasPractice"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isLocationOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isMembershipOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#isPracticeOf"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#locatedAt"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#references"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/3/cbo#relatedTo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#belongsToSubject"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasAddress"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasArchivedAdress"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasBirthPlace"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasCorrespondent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasDestinationAddress"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasDuration"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasInstitution"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasLocation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasMembership"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPractice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasReply"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasScientificField"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSubject"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isArchiveAdressOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isBirthPlaceOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isDestinationAdressOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isInstitutionOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isLocationOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isMembershipOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPracticeOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isReceiverOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isResponseOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isScientificDomainOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSenderOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSubjectOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#livesAt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#locatedAt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#relatedTo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#sentAddress"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#workplace"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
