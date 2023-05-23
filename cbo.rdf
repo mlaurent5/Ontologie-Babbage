@@ -243,6 +243,21 @@
     
 
 
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPlaceOfDeath -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPlaceOfDeath">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPlaceOfDeathOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:comment xml:lang="fr">Le lieu de mort d&apos;une personne.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The location at which a person died.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourLieuDeDécès</rdfs:label>
+        <rdfs:label xml:lang="en">hasPlaceOfDeath</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPractice -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPractice">
@@ -254,6 +269,19 @@
         <rdfs:comment>Une pratique d&apos;un domaine par la personne, qui peut avoir lieu seulement pour une durée définie.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourPratique</rdfs:label>
         <rdfs:label xml:lang="en">hasPractice</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPracticePlace -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPracticePlace">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:comment xml:lang="en">A pratice takes place at a location.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une pratique qui se déroule dans ce lieu.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourlieuDePratique</rdfs:label>
+        <rdfs:label xml:lang="en">hasPracticePlace</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -381,6 +409,17 @@
         <rdfs:comment xml:lang="en">The person that is involved by the membership.</rdfs:comment>
         <rdfs:label xml:lang="fr">estAdhésionDe</rdfs:label>
         <rdfs:label xml:lang="en">isMembershipOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPlaceOfDeathOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPlaceOfDeathOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="fr">aPourLieuDeDécès</rdfs:label>
+        <rdfs:label xml:lang="en">isPlaceOfDeathOf</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -540,34 +579,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#placeOfBirth -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#placeOfBirth">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
-        <rdfs:comment xml:lang="fr">Le lieu de naissance d&apos;une personne.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The location at which a person was born.</rdfs:comment>
-        <rdfs:label xml:lang="fr">lieuDeNaissance</rdfs:label>
-        <rdfs:label xml:lang="en">placeOfBirth</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#placeOfDeath -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#placeOfDeath">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
-        <rdfs:comment xml:lang="fr">Le lieu de mort d&apos;une personne.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The location at which a person died.</rdfs:comment>
-        <rdfs:label xml:lang="fr">lieuDeDécès</rdfs:label>
-        <rdfs:label xml:lang="en">placeOfDeath</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#references -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references">
@@ -660,19 +671,6 @@
         <rdfs:comment xml:lang="en">Somebody that is identified as being related to the given person by way of similar parents.</rdfs:comment>
         <rdfs:label xml:lang="fr">frèreOuSoeurDe</rdfs:label>
         <rdfs:label xml:lang="en">siblingOf</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#workplace -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#workplace">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
-        <rdfs:comment xml:lang="en">A person that is working at this place.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une pratique qui se déroule dans ce lieu.</rdfs:comment>
-        <rdfs:label xml:lang="fr">lieuDeTravail</rdfs:label>
-        <rdfs:label xml:lang="en">workplace</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1401,6 +1399,7 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasLocation"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasMembership"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPractice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPracticePlace"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasReply"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasScientificField"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSubject"/>
@@ -1410,6 +1409,7 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isInstitutionOf"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isLocationOf"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isMembershipOf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPlaceOfDeathOf"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPracticeOf"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isReceiverOf"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isResponseOf"/>
@@ -1421,7 +1421,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#relatedTo"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#sentAddress"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#workplace"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
