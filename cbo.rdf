@@ -276,10 +276,11 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPracticePlace -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPracticePlace">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
         <rdfs:comment xml:lang="en">A pratice takes place at a location.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">Une pratique qui se déroule dans ce lieu.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une pratique se déroule dans un lieu.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourlieuDePratique</rdfs:label>
         <rdfs:label xml:lang="en">hasPracticePlace</rdfs:label>
     </owl:ObjectProperty>
@@ -311,6 +312,21 @@
         <rdfs:comment xml:lang="fr">Une pratique est liée à un ou plusieurs domaines scientifiques.</rdfs:comment>
         <rdfs:label xml:lang="fr">aPourDomaineScientifique</rdfs:label>
         <rdfs:label xml:lang="en">hasScientificField</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSentAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSentAddress">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSendingAddressOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <rdfs:comment xml:lang="fr">L&apos;adresse depuis laquelle la lettre a été envoyée.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The adress from which the letter was sent.</rdfs:comment>
+        <rdfs:label xml:lang="fr">aPourAdresseDEnvoi</rdfs:label>
+        <rdfs:label xml:lang="en">hasSendingAddress</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -364,7 +380,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
         <rdfs:comment xml:lang="en">A letter that was sent to the given address.</rdfs:comment>
-        <rdfs:comment xml:lang="fr">La lettre dont une adresse est la destination.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre qui a l&apos;adresse pour destination.</rdfs:comment>
         <rdfs:label xml:lang="fr">estLAdresseDeDestinationDe</rdfs:label>
         <rdfs:label xml:lang="en">isDestinationAdressOf</rdfs:label>
     </owl:ObjectProperty>
@@ -416,9 +432,12 @@
     <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPlaceOfDeathOf -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isPlaceOfDeathOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
-        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
-        <rdfs:label xml:lang="fr">aPourLieuDeDécès</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="en">A person that died at this location.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une personne qui est décédé en ce lieu.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLieuDeDécèsDe</rdfs:label>
         <rdfs:label xml:lang="en">isPlaceOfDeathOf</rdfs:label>
     </owl:ObjectProperty>
     
@@ -430,6 +449,8 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Practice"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Person"/>
+        <rdfs:comment xml:lang="fr">La personne concernée par la pratique.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The person involved by the practice.</rdfs:comment>
         <rdfs:label xml:lang="fr">estPratiqueDe</rdfs:label>
         <rdfs:label xml:lang="en">isPracticeOf</rdfs:label>
     </owl:ObjectProperty>
@@ -489,6 +510,20 @@
         <rdfs:comment xml:lang="fr">Une lettre écrite par la personne.</rdfs:comment>
         <rdfs:label xml:lang="fr">estLEnvoyeurDe</rdfs:label>
         <rdfs:label xml:lang="en">isSenderOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSendingAddressOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isSendingAddressOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:comment xml:lang="en">A letter that was sent from the given address.</rdfs:comment>
+        <rdfs:comment xml:lang="fr">Une lettre qui a l&apos;adresse pour origine.</rdfs:comment>
+        <rdfs:label xml:lang="fr">estLAdresseDEnvoiDe</rdfs:label>
+        <rdfs:label xml:lang="en">isSendingAddressOf</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -641,20 +676,6 @@
         <rdfs:comment xml:lang="fr">Une relation familiale de la personne considérée.</rdfs:comment>
         <rdfs:label xml:lang="fr">apparentéA</rdfs:label>
         <rdfs:label xml:lang="en">relatedTo</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#sentAddress -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#sentAddress">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Address"/>
-        <rdfs:comment xml:lang="fr">L&apos;adresse depuis laquelle la lettre a été envoyée.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The adress from which the letter was sent.</rdfs:comment>
-        <rdfs:label xml:lang="fr">adresseDEnvoi</rdfs:label>
-        <rdfs:label xml:lang="en">sentAddress</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1402,6 +1423,7 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasPracticePlace"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasReply"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasScientificField"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSentAddress"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#hasSubject"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isArchiveAdressOf"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#isBirthPlaceOf"/>
@@ -1420,7 +1442,6 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#locatedAt"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#references"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#relatedTo"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#sentAddress"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
