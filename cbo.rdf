@@ -147,7 +147,7 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Place"/>
         <rdfs:comment xml:lang="fr">Le lieu de naissance d&apos;une ou plusieurs personnes.</rdfs:comment>
         <rdfs:comment xml:lang="en">The birth place of one or more persons.</rdfs:comment>
-        <rdfs:label xml:lang="fr">aPourlieuDeNaissance</rdfs:label>
+        <rdfs:label xml:lang="fr">aPourLieuDeNaissance</rdfs:label>
         <rdfs:label xml:lang="en">hasBirthPlace</rdfs:label>
     </owl:ObjectProperty>
     
