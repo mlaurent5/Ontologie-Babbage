@@ -1055,6 +1055,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/marcl/ontologies/2023/cbo#volumeNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/marcl/ontologies/2023/cbo#volumeNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/marcl/ontologies/2023/cbo#Letter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="fr">Le numéro du volume auquel appartient une lettre.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The number of the volume in which a letter is included.</rdfs:comment>
+        <rdfs:label xml:lang="fr">numéroDeVolume</rdfs:label>
+        <rdfs:label xml:lang="en">volumeNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
